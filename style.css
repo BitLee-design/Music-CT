@@ -11,7 +11,8 @@ body {
 	background-image: linear-gradient(
 		0deg, 
 		rgb(247, 247, 247) 23.8%
-		rgb(252, 221, 221) 92%		
+		rgb(252, 221, 221) 92%	
+		rgb(147, 447, 147) 53.8%	
 	);
 	display: flex;
 	flex-direction: column;
@@ -22,7 +23,7 @@ body {
 .music-container {
 	background-color: white;
 	border-radius: 15px;
-	box-shadow: 0 2px 20px 0 rgba(252, 169, 169, 0.6);
+	box-shadow: 0 20px 20px 0 rgba(230, 171, 171, 0.6);
 	display: flex;
 	padding: 20px 30px;
 	position: relative;
@@ -35,9 +36,9 @@ body {
 	width: 110px;
 }
 
-.img-container:after {
+.img-container::after {
 	content: '';
-	background-color: yellow;
+	background-color: rgba(47, 0, 255, 0.877);
 	height: 20px;
 	width: 20px;
 	position: absolute;
@@ -78,21 +79,23 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 15%;
 	z-index: 1;
 }
 
 .action-btn {
-	background-color: blue;
+	background-color: rgba(0, 17, 255, 0.637);
 	border: 0;
-	color: #2A1FAA;
+	color: #0b0924;
 	font-size: 20px;
 	cursor: pointer;
+	border-radius: 45%;
 	padding: 10px;
 	margin: 0 20px;
 }
 
 .action-btn-big {
-	color: red;
+	color: rgb(211, 2, 2);
 	font-size: 30px;
 }
 
@@ -101,7 +104,7 @@ body {
 }
 
 .music-info {
-	background-color: green;
+	background-color: rgba(238, 229, 238, 0.973);
 	border-radius: 15px 15px 0 0;
 	position: absolute;
 	top: 0;
@@ -109,15 +112,22 @@ body {
 	width: calc(100% - 40px);
 	opacity: 0;
 	transform: translateY(0%);
+	padding: 10px 10px, 10px 150px;
+	transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+	
 }
 
-.music-container-.play .music-info {
+.music-info h4 {
+	margin: 1;
+}
+
+.music-container.play .music-info {
 	opacity: 1;
 	transform: translateY(-100%);
 }
 
 .progress-container {
-	background: blue;
+	background: rgb(224, 221, 230);
 	border-radius: 5px;
 	cursor: pointer;
 	margin: 10px 0;
@@ -126,9 +136,30 @@ body {
 }
 
 .progress {
-	background-color:#002756;
+	background-color:#ec0101;
 	border-radius: 5px;
 	height: 100%;
-	width: 50%;
+	width: 0%;
 	transition: width 0.1s linear;
+}
+
+.contact {
+	text-align: center;
+}
+
+footer {
+	align-self: center;
+	align-content: center;
+}
+
+.logo {
+	align-content: center;
+	align-items: center;
+	border-radius: 30%;
+}
+
+.codeTwo {
+	align-self: center;
+	color: aliceblue;
+	font-family: Arial, Helvetica, sans-serif bold;
 }
