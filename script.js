@@ -1,6 +1,6 @@
 const musicContainer = document.querySelector('.music-container')
 const playBtn = document.querySelector('#play')
-const prevBtn = document.querySelector('#prev)
+const prevBtn = document.querySelector('#prev')
 const nextBtn = document.querySelector('#next')
 const audio = document.querySelector('#audio')
 const progress = document.querySelector('.progress')
@@ -12,7 +12,7 @@ const cover = document.querySelector('#cover')
 const songs = ['abel', 'eliza', 'tito']
 
 //keep track of songs
-let songIndex = 1
+let songIndex = 2
 
 //Initially load info into the DOM
 loadSong(songs[songIndex])
@@ -20,8 +20,8 @@ loadSong(songs[songIndex])
 //update song details
 function loadSong(song) {
 	title.innerText = song
-	audio.src = 'music/${song}.mp3'
-	cover.src = 'image/${song}.jpeg'
+	audio.src = `music/${song}.mp3`
+	cover.src = `images/${song}.jpg`
 }
 
 function playSong() {
@@ -43,8 +43,8 @@ function pauseSong() {
 function prevSong() {
 	songIndex--
 	
-	if(songIndex < 0) {
-	songIndex = song.length - 1
+	if (songIndex < 0) {
+		songIndex = songs.length - 1
 	}
 	
 	loadSong(songs[songIndex])
@@ -55,8 +55,8 @@ function prevSong() {
 function nextSong() {
 	songIndex++
 	
-	if(songIndex > song.length - 1) {
-	songIndex = 0
+	if (songIndex > songs.length - 1) {  
+		songIndex = 0
 
 	}
 	loadSong(songs[songIndex])
@@ -67,7 +67,7 @@ function nextSong() {
 function updateProgress(e) {
 	const {duration, currentTime} = e.srcElement
 	const progressPercent = (currentTime / duration) * 100
-	progress.styleWidth = '${progressPercent}%'
+	progress.style.width = `${progressPercent}%`
 }
 
 function setProgress(e) {
@@ -75,7 +75,7 @@ function setProgress(e) {
 	const clickX = e.offsetX
 	const duration = audio.duration
 	
-	audio.currentTime = (clickX / width) = duration
+	audio.currentTime = (clickX / width) * duration
 	
 }
 
